@@ -1,0 +1,81 @@
+.box{
+  position: relative;
+  background-color: chocolate;
+  width: 100px;
+  height: 100px;
+  animation-name: move;
+  /*animation 재생될 시간을 정한다.*/
+  animation-duration: 2s;
+ /* animation-iteration-count: infinite;/*연속반복기능*/
+  animation-direction: alternate;/*animation의 재생설정(앞,뒤로이동,번갈아서 이동)
+  nomal:앞이동 alternate:앞뒤이동 reverse:뒤이동 alternate-reverse:뒤에서앞이동*/
+}
+
+.line{
+  position: absolute;
+  display: inline-block;
+width: 30px;
+height:5px;
+background-color: rgb(19, 26, 129); 
+animation-name: linemove;
+animation-duration: 0.5s;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+
+}
+.line-active span:last-child{
+  top:0;
+  display: inline-block; 
+width: 30px;
+height:5px;
+background-color: red;
+
+}
+  
+
+
+
+.line-active span:last-child{
+
+background-color: rgb(16, 53, 39);
+animation-duration: 0.5s;
+bottom: 0;
+}
+
+/*animation기능을 쓸때 @keyframes태그를 쓴다.*/
+@keyframes  move {
+0%{
+left:0;
+}
+20%{
+  background-color: cyan;
+}
+25%{
+  background-color: crimson;
+
+}
+55%{
+  background-color: blue;
+  left: 150px;
+}
+75%{
+  background-color: darkgreen;
+  left: 200px;
+}
+100%{
+  background-color: cornflowerblue;
+  left:400px;
+}
+}
+@keyframes linemove {
+   
+  from{
+    
+    left: 0;
+  }
+  to{
+   
+    left: 300px;
+    transform: scaleX(1.2);
+  }
+}
